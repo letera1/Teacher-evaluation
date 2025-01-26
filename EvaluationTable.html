@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr td {
+            border: 1px solid black;
+
+
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .submit-btn {
+            position: absolute;
+            left: 0;
+            /* Align button to the left */
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove border */
+            border-radius: 8px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Add shadow */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            /* Smooth hover effect */
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+            /* Darker green on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge */
+        }
+
+        .submit-btn:active {
+            background-color: #3e8e41;
+            /* Even darker when pressed */
+            transform: scale(0.98);
+            /* Slightly shrink */
+        }
+
+        .wholeTable {
+            width: 100%;
+            border-collapse: collapse;
+            /* Remove gaps between borders */
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+            background-color: #f9f9f9;
+            /* Light background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Add shadow */
+        }
+
+        /* Header Styling */
+        .wholeTable thead th {
+            background-color: #4CAF50;
+            /* Green header */
+            color: white;
+            /* White text */
+            padding: 12px;
+            /* Add padding */
+            border: 1px solid #ddd;
+            /* Border between cells */
+        }
+
+        /* Table Body Styling */
+        .wholeTable tbody td {
+            padding: 10px;
+            /* Add padding for cell content */
+            border: 1px solid #ddd;
+            /* Border between cells */
+        }
+
+        /* Alternating Row Colors */
+        .wholeTable tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+            /* Light gray for odd rows */
+        }
+
+        /* Hover Effect for Rows */
+        .wholeTable tbody tr:hover {
+            background-color: #eaf5ea;
+            /* Subtle green on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        /* Radio Button Alignment */
+        .wholeTable tbody td input[type="radio"] {
+            margin: 0 10px;
+            /* Space between radio buttons */
+            cursor: pointer;
+            /* Pointer on hover */
+        }
+
+        /* Center Align Header */
+        .wholeTable thead th[colspan] {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .table-container {
+
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form id="evaluationForm" onsubmit="handleSubmit(event)">
+        <div class="table-container">
+            <h3 style="text-align: center; background-color: #4CAF50;padding: 5px 5px 5px;">INSTRUCTOR EVALUATION REPORT
+            </h3>
+            <p><strong>Instructor name:|course:</strong></p>
+            <table style="width: 90%; margin-right: 25%;" class="wholeTable">
+                <tr>
+                    <td colspan="6" style="text-align: center;">OVERALL INSTRUCTOR PERFORMANCE</td>
+                    <td class="result">x/5</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">NO.</td>
+                    <td rowspan="2">Question</td>
+
+                    <td>Strong Agree</td>
+                    <td>Agree</td>
+                    <td>Moderate</td>
+                    <td>Disagree</td>
+                    <td>Strongly Disagree</td>
+                </tr>
+                <tr>
+                    
+                   
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Respected the principle of day-one-class-one (DOCO) and used all allotted time for
+                        teaching/instruction</td>
+                    <td><input type="radio" name="row1" value="5"></td>
+                    <td><input type="radio" name="row1" value="4"></td>
+                    <td><input type="radio" name="row1" value="3"></td>
+                    <td><input type="radio" name="row1" value="2"></td>
+                    <td><input type="radio" name="row1" value="1"></td>
+
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> Used to come to class well prepared and organized to teach the course.</td>
+                    <td><input type="radio" name="row2" value="4"></td>
+                    <td><input type="radio" name="row2" value="3"></td>
+                    <td><input type="radio" name="row2" value="2"></td>
+                    <td><input type="radio" name="row2" value="1"></td>
+                    <td><input type="radio" name="row2" value="1"></td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> Gave a complete course outline during the first week of beginning teaching in class</td>
+                    <td><input type="radio" name="row3" value="4"></td>
+                    <td><input type="radio" name="row3" value="3"></td>
+                    <td><input type="radio" name="row3" value="2"></td>
+                    <td><input type="radio" name="row3" value="1"></td>
+                    <td><input type="radio" name="row3" value="1"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td> Supported theoretical teaching in class with practical skills</td>
+                    <td><input type="radio" name="row4" value="4"></td>
+                    <td><input type="radio" name="row4" value="3"></td>
+                    <td><input type="radio" name="row4" value="2"></td>
+                    <td><input type="radio" name="row4" value="1"></td>
+                    <td><input type="radio" name="row4" value="1"></td>
+
+
+                </tr>
+                <tr>
+
+
+                    <td>5</td>
+                    <td> Used appropriate instructional methods and teaching aids as required</td>
+                    <td><input type="radio" name="row5" value="4"></td>
+                    <td><input type="radio" name="row5" value="3"></td>
+                    <td><input type="radio" name="row5" value="2"></td>
+                    <td><input type="radio" name="row5" value="1"></td>
+                    <td><input type="radio" name="row5" value="1"></td>
+                </tr>
+
+
+                <tr>
+                    <td>6</td>
+                    <td> Used only English as a medium of instruction rather than local language.</td>
+                    <td><input type="radio" name="row6" value="4"></td>
+                    <td><input type="radio" name="row6" value="3"></td>
+                    <td><input type="radio" name="row6" value="2"></td>
+                    <td><input type="radio" name="row6" value="1"></td>
+                    <td><input type="radio" name="row6" value="1"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td> Motivated students to ask questions and give comments in class</td>
+                    <td><input type="radio" name="row7" value="4"></td>
+                    <td><input type="radio" name="row7" value="3"></td>
+                    <td><input type="radio" name="row7" value="2"></td>
+                    <td><input type="radio" name="row7" value="1"></td>
+                    <td><input type="radio" name="row7" value="1"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td> Showed a strong motivation to teach and make students gain knowledge and skills.</td>
+                    <td><input type="radio" name="row8" value="4"></td>
+                    <td><input type="radio" name="row8" value="3"></td>
+                    <td><input type="radio" name="row8" value="2"></td>
+                    <td><input type="radio" name="row8" value="1"></td>
+                    <td><input type="radio" name="row8" value="1"></td>
+                </tr>
+
+                <td>9</td>
+                <td> Focused on the subject matter in class and did not digress or divert the topic to irrelevant issues
+                <td><input type="radio" name="row9" value="4"></td>
+                <td><input type="radio" name="row9" value="3"></td>
+                <td><input type="radio" name="row9" value="2"></td>
+                <td><input type="radio" name="row9" value="1"></td>
+                <td><input type="radio" name="row9" value="1"></td>
+
+                </td>
+                <tr>
+                    <td>10</td>
+                    <td> Gave exercises/assignments/term papers for continuous assessment</td>
+                    <td><input type="radio" name="row10" value="4"></td>
+                    <td><input type="radio" name="row10" value="3"></td>
+                    <td><input type="radio" name="row10" value="2"></td>
+                    <td><input type="radio" name="row10" value="1"></td>
+                    <td><input type="radio" name="row10" value="1"></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td> Set conceptual exam questions that promote critical thinking rather than promoting rote
+                        learning.
+                    </td>
+
+                    <td><input type="radio" name="row11" value="4"></td>
+                    <td><input type="radio" name="row11" value="3"></td>
+                    <td><input type="radio" name="row11" value="2"></td>
+                    <td><input type="radio" name="row11" value="1"></td>
+                    <td><input type="radio" name="row11" value="1"></td>
+
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Set exam questions that are related to the topics covered in class and according to the syllabus
+                    </td>
+                    <td><input type="radio" name="row12" value="4"></td>
+                    <td><input type="radio" name="row12" value="3"></td>
+                    <td><input type="radio" name="row12" value="2"></td>
+                    <td><input type="radio" name="row12" value="1"></td>
+                    <td><input type="radio" name="row12" value="1"></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td> Set conceptual exam questions that promote critical thinking rather than promoting rote
+                        learning</td>
+                    <td><input type="radio" name="row13" value="4"></td>
+                    <td><input type="radio" name="row13" value="3"></td>
+                    <td><input type="radio" name="row13" value="2"></td>
+                    <td><input type="radio" name="row13" value="1"></td>
+                    <td><input type="radio" name="row13" value="1"></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Showed students their exam results and gave feedback.</td>
+                    <td><input type="radio" name="row14" value="4"></td>
+                    <td><input type="radio" name="row14" value="3"></td>
+                    <td><input type="radio" name="row14" value="2"></td>
+                    <td><input type="radio" name="row14" value="1"></td>
+                    <td><input type="radio" name="row14" value="1"></td>
+
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td> Has sufficient knowledge and confidence in the subject matter of the course he/she taught</td>
+                    <td><input type="radio" name="row15" value="4"></td>
+                    <td><input type="radio" name="row15" value="3"></td>
+                    <td><input type="radio" name="row15" value="2"></td>
+                    <td><input type="radio" name="row15" value="1"></td>
+                    <td><input type="radio" name="row15" value="1"></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Did not demoralize, lampoon, embarrass or insult students or use bad language against them.</td>
+                    <td><input type="radio" name="row16" value="4"></td>
+                    <td><input type="radio" name="row16" value="3"></td>
+                    <td><input type="radio" name="row16" value="2"></td>
+                    <td><input type="radio" name="row16" value="1"></td>
+                    <td><input type="radio" name="row16" value="1"></td>
+
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Delivered the subject matter of the course clearly in a way that students understood</td>
+                    <td><input type="radio" name="row17" value="4"></td>
+                    <td><input type="radio" name="row17" value="3"></td>
+                    <td><input type="radio" name="row17" value="2"></td>
+                    <td><input type="radio" name="row17" value="1"></td>
+                    <td><input type="radio" name="row17" value="1"></td>
+
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Was punctual or came to class in time and left class after using all his/her time.</td>
+                    <td><input type="radio" name="row18" value="4"></td>
+                    <td><input type="radio" name="row18" value="3"></td>
+                    <td><input type="radio" name="row18" value="2"></td>
+                    <td><input type="radio" name="row18" value="1"></td>
+                    <td><input type="radio" name="row18" value="1"></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Did not miss normal class schedules and bother students with make-up classes.</td>
+                    <td><input type="radio" name="row19" value="4"></td>
+                    <td><input type="radio" name="row19" value="3"></td>
+                    <td><input type="radio" name="row19" value="2"></td>
+                    <td><input type="radio" name="row19" value="1"></td>
+                    <td><input type="radio" name="row19" value="1"></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Covered the whole topics of the course according to the syllabus.</td>
+                    <td><input type="radio" name="row20" value="4"></td>
+                    <td><input type="radio" name="row20" value="3"></td>
+                    <td><input type="radio" name="row20" value="2"></td>
+                    <td><input type="radio" name="row20" value="1"></td>
+                    <td><input type="radio" name="row20" value="1"></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td> Treated students fairly and equitably, without any discrimination on any grounds whatsoever.
+                    </td>
+                    <td><input type="radio" name="row21" value="4"></td>
+                    <td><input type="radio" name="row21" value="3"></td>
+                    <td><input type="radio" name="row21" value="2"></td>
+                    <td><input type="radio" name="row21" value="1"></td>
+                    <td><input type="radio" name="row21" value="1"></td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td> Dressed appropriately for teaching (wore gowns, etc) and kept a good personal hygiene.</td>
+                    <td><input type="radio" name="row22" value="4"></td>
+                    <td><input type="radio" name="row22" value="3"></td>
+                    <td><input type="radio" name="row22" value="2"></td>
+                    <td><input type="radio" name="row22" value="1"></td>
+                    <td><input type="radio" name="row22" value="1"></td>
+                </tr>
+            </table>
+
+
+        </div>
+        <button type="submit" class="submit-btn">submit</button>
+    </form>
+    <script>
+        let x=0;
+        const averresult=document.getElementById('result');
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(document.getElementById('evaluationForm'));
+            const results = {};
+
+            // Iterate through formData to collect all inputs
+            formData.forEach((value, key) => {
+                results[key] = value;
+             x+=value/22;
+             console.log(x);
+             averresult.textContent = `${x} out of 5`;
+
+            });
+
+            console.log(results); // Log the filled data
+            alert(JSON.stringify(results, null, 2)); // Optional: Show data in an alert
+        }
+
+
+
+
+
+
+
+
+        // to see 
+        
+    </script>
+</body>
+
+</html>
