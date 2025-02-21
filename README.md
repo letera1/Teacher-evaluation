@@ -1,4 +1,4 @@
-Teacher Evaluation System (University Project)
+# Teacher Evaluation System (University Project)
 This Teacher Evaluation System is a web-based platform developed as a university project to enhance the faculty evaluation process. Built using PHP, JavaScript, and HTML, the system allows students to provide structured feedback on instructors, helping universities improve teaching quality based on real data.
 
 🔹 Key Features
