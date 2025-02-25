@@ -13,6 +13,7 @@
     background: #0091b9;
     padding: 15px;
     font-size: 16px;
+    position: relative;
 }
 
 /* Navbar Flex Container */
@@ -20,7 +21,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
 /* Logo Section */
@@ -58,6 +61,10 @@ li {
 }
 
 /* Buttons */
+.buttons {
+    display: flex;
+}
+
 .buttons button {
     background-color: #555555;
     border-radius: 12px;
@@ -78,6 +85,55 @@ li {
     background-color: orangered;
 }
 
-.buttons button a:hover {
+/* Responsive Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
     color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navdiv {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #0091b9;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    ul.show {
+        display: flex;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    .buttons {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 }
