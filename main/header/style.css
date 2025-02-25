@@ -13,6 +13,7 @@
   background: #0091b9;
   padding: 15px;
   font-size: 16px;
+  width: 100%;
 }
 
 /* Navbar Flex Container */
@@ -20,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  flex-wrap: wrap;
 }
 
 /* Logo Section */
@@ -39,11 +40,11 @@
 /* Navigation Links */
 ul {
   display: flex;
+  gap: 20px;
 }
 
 li {
   list-style: none;
-  margin-right: 25px;
 }
 
 .navbar ul a {
@@ -58,6 +59,11 @@ li {
 }
 
 /* Buttons */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .buttons button {
   background-color: #555555;
   border-radius: 12px;
@@ -65,7 +71,6 @@ li {
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-left: 10px;
 }
 
 .buttons button a {
@@ -78,49 +83,46 @@ li {
   background-color: orangered;
 }
 
-.buttons button a:hover {
+/* HIDE MENU TOGGLE ICON ON LARGE SCREENS */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
   color: white;
-}
-.main-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(11, 128, 0);
-  color: #ffffff;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  padding: 10px 0; /* Reduced padding for smaller height */
-  font-size: 14px; /* Adjusted font size for better fit */
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px; /* Smaller gap between content sections */
-}
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+  .navdiv {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.footer-middle {
-  text-align: center;
-}
+  /* Hide menu initially */
+  ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+  }
 
-.footer-middle h3,
-.footer-middle p {
-  margin: 2px 0; /* Reduced margins for compactness */
-}
+  /* Show menu toggle icon only on small screens */
+  .menu-toggle {
+    display: block;
+    margin-top: 10px;
+  }
 
-.footer-middle a {
-  color: black;
-  text-decoration: none;
-}
+  /* Show menu when active */
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.footer-middle a:hover {
-  text-decoration: underline;
-  color: orangered;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 5px;
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
