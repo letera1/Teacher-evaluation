@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 
 $sql = "CREATE TABLE IF NOT EXISTS evaluations (
-    id INT AUTO_INCREMENT ,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     teacher_name VARCHAR(255) NOT NULL,
     course_name VARCHAR(255) NOT NULL,
     evaluation_score FLOAT NOT NULL
