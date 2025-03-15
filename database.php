@@ -37,7 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $department = strtolower($_POST['department']); // Convert department to lowercase
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-
+ // Check if email or student ID already exists
+    $checkQuery = "SELECT * FROM students WHERE email = ? OR student_id = ?";
+    $stmt = $conn->prepare($checkQuery);
+    $stmt->bind_param("ss", $email, $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         echo "Error: Email or Student ID already exists.";
