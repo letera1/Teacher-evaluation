@@ -23,6 +23,11 @@ $sql = "CREATE TABLE IF NOT EXISTS evaluations (
     evaluation_score FLOAT NOT NULL
 )";
 
+// nama 
+
+if (!$conn->query($sql)) {
+    die("Error creating table: " . $conn->error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $teacher_name = $_GET['teacher_name'];
@@ -30,7 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $total_score = 0; // Initialize total_score
     $evaluation_score = 0; // Initialize evaluation_score
  
-    
+       
+    // Loop through each row and calculate total_score
+    for ($i = 1; $i <= 22; $i++) {  // Update to loop through all 22 rows
+        if (isset($_GET['row' . $i])) {
+            $selected_value = $_GET['row' . $i];
+            if (is_numeric($selected_value)) { // Ensure it's a valid numeric value
+                $total_score += intval($selected_value); 
+                 // Add the value to the total score
+              
+            }
+        }
+    }
     // Calculate evaluation_score only if total_score is not zero
     if ($total_score > 0) {
         $evaluation_score = $total_score / 22; // Normalize score
