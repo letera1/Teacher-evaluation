@@ -1,0 +1,86 @@
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: #007BFC;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Navbar Flex Container */
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Navigation Links */
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin-right: 25px;
+}
+
+.navbar ul a {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+
+
+/* Buttons */
+.buttons button {
+    background-color: #555555;
+    border-radius: 12px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: 10px;
+}
+
+
+
+.buttons button a:hover {
+    color: white;
+}.navbar {
+    background: #007BFC;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 5%;
+}
+.adminsignform{
+padding-top: 20%;
+
+}
+
+.container{
+    position: center;
+    
+}

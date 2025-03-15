@@ -1,0 +1,184 @@
+
+/* header start */
+
+* {
+margin: 0;
+padding: 0;
+}
+
+header {
+display: flex;
+justify-content: space-between; 
+align-items: center;
+padding: 10px 20px; 
+background-color:green; 
+height: 50px;
+font-size: 20px;
+}
+
+
+.Home {
+display: flex;
+align-items: center;
+font-size: 20px;
+}
+
+
+.Home img {
+width: 55px;
+height: 55px;
+}
+
+
+nav ul {
+list-style: none;
+display:flex;
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+margin-left: 20px;
+position: relative;
+}
+
+nav ul li a {
+text-decoration: none;
+color: #3b0707; 
+text-transform: uppercase;
+font-size: 17px;
+
+
+}
+nav ul li::after{
+content: '';
+height: 3px;
+width: 0;
+background: #aabbb9;
+position: absolute;
+left: 0;
+bottom: -3px;
+transition: 0.5s;
+}
+nav ul li:hover::after{
+width: 100%;
+}
+/* header end */
+
+table tr td {
+    border: 1px solid black;
+
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.submit-btn {
+    position: absolute;
+    left: 0;
+    /* Align button to the left */
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    border: none;
+    /* Remove border */
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effect */
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge */
+}
+
+.submit-btn:active {
+    background-color: #3e8e41;
+    /* Even darker when pressed */
+    transform: scale(0.98);
+    /* Slightly shrink */
+}
+
+.wholeTable {
+    width: 100%;
+    border-collapse: collapse;
+    /* Remove gaps between borders */
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #f9f9f9;
+    /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow */
+}
+
+/* Header Styling */
+.wholeTable thead th {
+    background-color: green;
+    /* Green header */
+    color: white;
+    /* White text */
+    padding: 12px;
+    /* Add padding */
+    border: 1px solid #ddd;
+    /* Border between cells */
+}
+
+/* Table Body Styling */
+.wholeTable tbody td {
+    padding: 10px;
+    /* Add padding for cell content */
+    border: 1px solid #ddd;
+    /* Border between cells */
+}
+
+/* Alternating Row Colors */
+.wholeTable tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    /* Light gray for odd rows */
+}
+
+/* Hover Effect for Rows */
+.wholeTable tbody tr:hover {
+    background-color: #eaf5ea;
+    /* Subtle green on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Radio Button Alignment */
+.wholeTable tbody td input[type="radio"] {
+    margin: 0 10px;
+    /* Space between radio buttons */
+    cursor: pointer;
+    /* Pointer on hover */
+}
+
+/* Center Align Header */
+.wholeTable thead th[colspan] {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.table-container {
+
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+
+}
